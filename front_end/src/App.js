@@ -1,68 +1,59 @@
 import React from "react";
-// import { Route, Routes } from "react-router-dom";
 import TechUser from "./Components/TechUsers/techUser";
-
-
+import "bootstrap/dist/css/bootstrap.min.css";
+// import Button from "react-bootstrap/Button";
+import { Button, Breadcrumb } from "react-bootstrap";
 import "./App.css";
-// import Navigation from "./Navigation";
 
 function App() {
-
-
   return (
-    
-    <div className="techback">
-      
-      
+    <div className="App">
+      <div className="techback">
+        
+        <div header className="App-header">
+          <Breadcrumb>
+          <Breadcrumb.Item>About Us</Breadcrumb.Item>
+          <Breadcrumb.Item>Sign Up</Breadcrumb.Item>
+          <Breadcrumb.Item>Sign In</Breadcrumb.Item>
+          <Breadcrumb.Item>Contact Us</Breadcrumb.Item>
+          </Breadcrumb>
+          <p>Welcome to TechBack.  Where Technology and the Community Intersect.</p>
 
-      {/* *****************
-      MAIN BODY SECTION
-      ***************** */}
+          
 
-      <div className="main">
 
-      
+        </div>
+        <div className="App-body">
 
-        {/* <Quote/> */}
-        <main>
-       
-        <div>
-        {/* {/* Home page: 
+        
+                        {/* {/* Home page: 
         Header  - There will be a TechBack - it  will link to the homepage
         Body - tagline "Where Engineers and the communities intersect"
         Main section - I am currently ... 
         There will be two buttons 
         */}
+        <div className="button">
+            <Button>In Tech</Button>
 
-        <button>
-        In Tech
-        </button>
+            <Button>In the Community</Button>
+        </div>
 
-        <button>
-        In the Community
-        </button>
+        <div>
+            Just Browsing
+        </div>
+        </div>
 
-        {/* There will be section on the bottom that says
-
-        "Just Browsing" - This will link to the get all page of engineers and community leaders
-     */}
-      </div>
+            
+            
 
           {/* <Routes>
             <Route path="/" element={<Home />} />
             
           </Routes> */}
-        </main>
       
       </div>
-      <div>
-        <TechUser />
-      </div>
-      </div>
-
-     
+    </div>
   );
-}  
+}
 
 export default App;
-
