@@ -1,11 +1,11 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import Button from "react-bootstrap/Button";
-import { Breadcrumb, Card } from "react-bootstrap";
+import { Breadcrumb, Card, Container, Button } from "react-bootstrap";
 
-function techUser() {
+function TechUsers() {
+    // const showAllTechUsers = 
   return (
-    // <div className="App">
     <div className="techback">
       <div header className="App-header">
         <Breadcrumb>
@@ -17,15 +17,27 @@ function techUser() {
       </div>
       <div className="techUser-body">
         <Card className="mb-3" style={{ color: "#000" }}>
-          {/* <Card.Img src="https://drive.google.com/file/d/1H6yhQgFku7sP6l2qYYReh4h_KEKJInX5/view?usp=sharing" /> */}
-
-        </Card>
+                  </Card>
 
         <div>Just Browsing</div>
+
+        <div className="inTech">
+          <Container>
+            <Card className="mb-3" style={{ color: "#000" }}>
+                            <Card.Body>
+                <Card.Title>Card Example</Card.Title>
+                <Card.Text>
+                  This is the text for the card
+                  <br />
+                  <Button>See More</Button>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Container>
+        </div>
       </div>
-      {/* </div> */}
     </div>
   );
 }
 
-export default techUser;
+export default TechUsers;
