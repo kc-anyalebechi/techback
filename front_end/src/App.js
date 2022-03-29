@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Breadcrumb, Card, Container } from "react-bootstrap";
 import SignIn from "./Components/Authentication/SignIn/SignIn.js";
-// import TechBack from "./Components/TechUsers/TechUser"
+import TechBack from "./Components/TechUsers/TechUser";
 // import SignUp from "./Components/Authentication/SignUp/ComSignUp.js";
 import "./App.css";
 
@@ -22,25 +22,22 @@ function App() {
         </p>
       </div>
       <div className="App-body">
-        
         <div className="button">
           <p>I'm currently...</p>
           <div>
-          <Button>In Tech</Button>
+            <Button>In Tech</Button>
           </div>
 
           <div>
-          <Button>In the Community</Button>
+            <Button>In the Community</Button>
           </div>
           <p>Just visiting... </p>
-
         </div>
-
       </div>
-
-      {/* <SignIn /> */}
-      {/* <TechBack/> */}
-
+      <div>
+        {/* <SignIn /> */}
+        <TechBack />
+      </div>
       {/* <SignUp /> */}
     </div>
   );

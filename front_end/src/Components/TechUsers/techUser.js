@@ -4,10 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Breadcrumb, Card, Container, Button } from "react-bootstrap";
 
 function TechUsers() {
-    // const showAllTechUsers = 
+  // const showAllTechUsers =
   return (
     <div className="techback">
-      <div header className="App-header">
+      <div header className="techUser-header">
         <Breadcrumb>
           <Breadcrumb.Item>About Us</Breadcrumb.Item>
           <Breadcrumb.Item>Sign Up</Breadcrumb.Item>
@@ -16,15 +16,12 @@ function TechUsers() {
         </Breadcrumb>
       </div>
       <div className="techUser-body">
-        <Card className="mb-3" style={{ color: "#000" }}>
-                  </Card>
-
-        <div>Just Browsing</div>
+        <Card className="mb-3" style={{ color: "#000" }}></Card>
 
         <div className="inTech">
           <Container>
             <Card className="mb-3" style={{ color: "#000" }}>
-                            <Card.Body>
+              <Card.Body>
                 <Card.Title>Card Example</Card.Title>
                 <Card.Text>
                   This is the text for the card
