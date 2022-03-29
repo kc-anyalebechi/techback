@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color:#282c34;
 }
 
 .App-logo {
@@ -15,7 +16,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 50vh;
+  min-height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +27,8 @@
 
 .App-body {
   background-color: #282c34;
-  min-height: 50vh;
+  padding-top: 5em;
+  padding-bottom: 5em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,4 +49,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button button{
+  background-color: blue;
+  color: aliceblue;
+  padding-bottom: 1em;
+  padding-top: 1em;
+
+  margin: 1em;
+  font-size: larger;
+}
+
+.button p {
+  text-align: left;
 }

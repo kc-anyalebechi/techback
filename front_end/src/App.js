@@ -17,24 +17,25 @@ function App() {
           <Breadcrumb.Item>Contact Us</Breadcrumb.Item>
         </Breadcrumb>
         <p>
-          Welcome to TechBack. Where Technology and the Community Intersect.
+          Welcome to TechBack. <br />
+          <em>"Where Technology and the Community Intersect."</em>
         </p>
       </div>
       <div className="App-body">
-        {/* {/* Home page: 
-        Header  - There will be a TechBack - it  will link to the homepage
-        Body - tagline "Where Engineers and the communities intersect"
-        Main section - I am currently ... 
-        There will be two buttons 
-        */}
+        
         <div className="button">
           <p>I'm currently...</p>
+          <div>
           <Button>In Tech</Button>
+          </div>
 
+          <div>
           <Button>In the Community</Button>
+          </div>
+          <p>Just visiting... </p>
+
         </div>
 
-        <div>Just Browsing</div>
       </div>
 
       {/* <SignIn /> */}
