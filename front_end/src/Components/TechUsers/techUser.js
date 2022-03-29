@@ -2,11 +2,16 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import Button from "react-bootstrap/Button";
 import { Breadcrumb, Card, Container, Button } from "react-bootstrap";
+import { techSeedData } from "../../SeedData/techSeedData";
 
 function TechUsers() {
-  // const showAllTechUsers =
+  const showAllTechUsers = Math.floor(Math.random() * techSeedData.length);
+
+  console.log(Math.random());
+  console.log(techSeedData.length);
+
   return (
-    <div className="techback">
+    <div className="techUser">
       <div header className="techUser-header">
         <Breadcrumb>
           <Breadcrumb.Item>About Us</Breadcrumb.Item>
@@ -15,24 +20,30 @@ function TechUsers() {
           <Breadcrumb.Item>Contact Us</Breadcrumb.Item>
         </Breadcrumb>
       </div>
-      <div className="techUser-body">
-        <Card className="mb-3" style={{ color: "#000" }}></Card>
-
-        <div className="inTech">
-          <Container>
-            <Card className="mb-3" style={{ color: "#000" }}>
-              <Card.Body>
-                <Card.Title>Card Example</Card.Title>
-                <Card.Text>
-                  This is the text for the card
-                  <br />
-                  <Button>See More</Button>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Container>
+      <Container>
+        <div className="techUser-body">
+          <Card className="mb-3" style={{ color: "#000" }}>
+            <Card.Body>
+              <Card.Title>
+                {techSeedData[showAllTechUsers].expertise}
+                <br />
+              </Card.Title>
+              <Card.Text>
+                Name: {techSeedData[showAllTechUsers].full_name} <br />
+                Location: {techSeedData[showAllTechUsers].location}
+                <br />
+                LinkedIn: {techSeedData[showAllTechUsers].linkedIn}
+                <br />
+                Contact: {techSeedData[showAllTechUsers].email}
+                <br />
+                Offering: {techSeedData[showAllTechUsers].offer}
+                <br />
+              </Card.Text>
+              {<Button>Select</Button>}
+            </Card.Body>
+          </Card>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }
