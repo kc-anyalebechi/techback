@@ -6,10 +6,8 @@ export const comSeedData = [
         "location": "Oakland",
         "linkedIn": "www.linkedin/in/meet-kc.com",
         "email": "myemailaddress@email.com",  
-        "seeking": [
-            "Mentorship", 
-            "Webinars", 
-            "Seminars"
-        ]
+        "seeking_expertise": "Engineer", 
+        "seeking_for": "Mentorship", 
+            
     }
 ] 

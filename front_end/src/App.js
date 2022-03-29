@@ -2,8 +2,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Breadcrumb, Card, Container } from "react-bootstrap";
 import SignIn from "./Components/Authentication/SignIn/SignIn.js";
-import TechBack from "./Components/TechUsers/TechUser";
-// import SignUp from "./Components/Authentication/SignUp/ComSignUp.js";
+import TechUsers from "./Components/TechUsers/TechUser";
+import ComUsers from "./Components/ComUsers/ComUser";
 import "./App.css";
 
 function App() {
@@ -22,8 +22,9 @@ function App() {
         </p>
       </div>
       <div className="App-body">
+      <p>I'm currently...</p>
+
         <div className="button">
-          <p>I'm currently...</p>
           <div>
             <Button>In Tech</Button>
           </div>
@@ -31,15 +32,19 @@ function App() {
           <div>
             <Button>In the Community</Button>
           </div>
-          <p>Just visiting... </p>
         </div>
+        <p>Just visiting... </p>
+
+
+        <TechUsers />
+
+        <ComUsers />
+
+
       </div>
-      <div>
-        {/* <SignIn /> */}
-        <TechBack />
+       
       </div>
-      {/* <SignUp /> */}
-    </div>
+        
   );
 }
 
