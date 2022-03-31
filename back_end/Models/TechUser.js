@@ -6,7 +6,7 @@ const techUserSchema = new mongoose.Schema({
     location: String, 
     linkedin: String,
     email: String,
-    Offer: String,
+    offer: String,
 })
 
 module.exports = mongoose.model('TechUser', techUserSchema)
