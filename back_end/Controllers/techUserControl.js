@@ -1,6 +1,5 @@
 const express = require("express");
 const TechUser = require("./../Models/TechUser")
-
 const router = express.Router();
 
 // *********************
