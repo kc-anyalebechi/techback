@@ -1,27 +1,34 @@
+require('dotenv').config()
 const express = require("express");
-console.log("express", express);
-// CREATE A NEW INSTANCE OF EXPRESS
+const logger = require('morgan')
+const cors = require('cors')
+const techUserControl = require('./Controllers/techUserControl')
+
+
+//variable for the .env file
+const PORT = process.env.PORT
+
+// middleware
 const app = express();
-// SET THE DEFAULT PORT NUMBER THE WEB SERVER WILL LISTEN IN ON
-const PORT = 3000;
-// ACTIVATE THE SERVER TO LISTEN ON THE PORT
-app.listen(PORT, () => {
-  console.log(`Express server listening on port ${PORT}`);
-});
+// allows postman requests to accept json
+app.use(express.urlencoded({extended:false})); 
+app.use(express.json());
+app.use(logger("dev"));
+app.use(cors());
 
-app.get("/somedata", (req, res) => {
-  console.log("get - req", req);
-  res.send("Hello world");
-});
 
-app.get("/alltechdata", (req, res) => {
-  console.log("get - req", req);
-  res.send({
-    full_name: "Kelechuku Anyalebechi",
-    expertise: "Software Engineer",
-    location: "San Jose",
-    linkedIn: "www.linkedin/in/meet-kc.com",
-    email: "myemailaddress@email.com",
-    offer: "Seminars",
-  });
-});
+// //T E S T I N G   C O N N E C T I O N
+//     app.get('/', (req, res) => {
+//     res.send('conection test passed')
+// });
+
+
+app.use('/techusers', techUserControl)
+
+
+
+app.listen(PORT, ()=>{
+    console.log(`Listening in on port: ${PORT}`)
+})
+
+
