@@ -1,13 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button} from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import SignIn from "./Components/Authentication/SignIn/SignIn.js";
 import TechUsers from "./Components/TechUsers/TechUser";
 import ComUsers from "./Components/ComUsers/ComUser";
 import Header from "./Components/Header/Header";
-import {useState} from 'react';
-import "./App.css";
 import TechSignUp from "./Components/Authentication/SignUp/TechSignUp";
+// import { useState } from "react";
+// import { Route, Routes } from "react-router-dom";
 
+import "./App.css";
 
 function App() {
   // const [techUsers, setTechUsers] = useState([])
@@ -21,38 +22,48 @@ function App() {
 
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <div header className="App-header">
         <p>
-        <em>TechBack... <br />
-          "Where Community and Technology Intersect"</em> </p>
+          <em>
+            TechBack... <br />
+            "Where Community and Technology Intersect"
+          </em>
+        </p>
       </div>
       <div className="App-body">
-      <p>I'm currently...</p>
+        <p>I'm currently...</p>
 
         <div className="button">
           <div>
-            <Button>In Tech</Button>
+            <link to="/ComUsers/Conser.js">
+              <Button>In Tech</Button>
+            </link>
           </div>
-
           <div>
             <Button>In the Community</Button>
           </div>
-        </div>
-        <p>Just visiting... </p>
 
+          {/* <Routes>
+            <Route path="/" element={<ComUsers />} /> */}
+            {/* <Route path="/Main/QuoteOfDay" element={<QuoteOfDay />} />
+            <Route path="/Main/StayInspired" element={<StayInspired />} />
+            <Route path="/Main/NeedHelp" element={<NeedHelp />} />
+            <Route path="/Main/ContactUs" element={<ContactUs />} />
+            <Route path="/Main/GreenBtn" element={<GreenBtn />} /> */}
+{/* 
+          </Routes> */}
+
+
+        </div>
 
         <TechUsers />
         <SignIn />
         <TechSignUp />
 
         <ComUsers />
-
-
       </div>
-       
-      </div>
-        
+    </div>
   );
 }
 
