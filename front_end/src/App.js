@@ -6,7 +6,7 @@ import ComUsers from "./Components/ComUsers/ComUser";
 import Header from "./Components/Header/Header";
 import TechSignUp from "./Components/Authentication/SignUp/TechSignUp";
 import { useState } from "react";
-// import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
 
@@ -14,14 +14,8 @@ function App() {
   const [techUsers, setTechUsers] = useState([]);
   const [techUser, setTechUser] = useState({ full_name: "", expertise: "" });
 
-  // const handleClick = () => {
-  //   fetch()
-  //   .then(response => response.json())
-  //   .then(data => setTechUsers(data.techUsers))
-  // }
-
   const handleClick = () => {
-    fetch("http://localhost:3000/techusers")
+    fetch("http://localhost:4000/techusers")
       .then((res) => res.json())
       .then((data) => setTechUsers(data.techUsers));
   };
@@ -45,15 +39,15 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(techUsers);
-    fetch("http://localhost:3000/techUser", {
+    console.log(techUser);
+    fetch("http://localhost:4000/techUsers", {
       headers: {
         "Content-Type": "application/json",
       },
       method: "POST",
       body: JSON.stringify(techUser),
     })
-      .then(() => fetch("http://localhost:3000/techUsers"))
+      .then(() => fetch("http://localhost:4000/techusers"))
       .then((response) => response.json())
       .then((data) => setTechUsers(data.techUsers))
       .then(() =>
@@ -68,68 +62,90 @@ function App() {
       );
   };
 
-  return (
-    <div className="App">
-      <Header />
-      <div header className="App-header">
-        <div>
-        <p>
-          <em>
-            TechBack... <br />
-            "Where Community and Technology Intersect"
-          </em>
-        </p>
-      </div>
-      <div className="App-body">
-        <p>I'm currently...</p>
-
-        <div className="button">
-          <div>
-            <Button>In Tech</Button>
-          </div>
-          <div>
-            <Button>In the Community</Button>
-          </div>
-          </div>
-
-          {/* <Routes>
-            <Route path="/" element={<ComUsers />} /> */}
-          {/* <Route path="/Main/QuoteOfDay" element={<QuoteOfDay />} />
-            <Route path="/Main/StayInspired" element={<StayInspired />} />
-            <Route path="/Main/NeedHelp" element={<NeedHelp />} />
-            <Route path="/Main/ContactUs" element={<ContactUs />} />
-            <Route path="/Main/GreenBtn" element={<GreenBtn />} /> */}
-          {/* 
-          </Routes> */}
-
-{/* Mapping TechUser Data */}
-
-{/* 
+  {
+    /* 
 *******************
 DELETE HANDLE CLICK
-******************** */}
-)
-      const handleDelete = (vinyl) => {
-        // event.preventDefault();
+********************  */
+  }
 
-      console.log(vinyl)
-      fetch("http://localhost:3000/vinyls/"+ vinyl._id, {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        method: 'DELETE',
-        body: JSON.stringify(vinyl)
-      })
-        .then(() => fetch("http://localhost:3000/vinyls/"))
-        .then(response => response.json())
-        .then(data => setVinyls(data.vinyls))
-        .then(() => setVinyl({artist: "", album: ""}))
-      }
+  const handleDelete = (techUser) => {
+    // event.preventDefault();
 
+    console.log(techUser);
+    fetch("http://localhost:4000/techUsers/" + techUser._id, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+      body: JSON.stringify(techUser),
+    })
+      .then(() => fetch("http://localhost:4000/techUsers/"))
+      .then((response) => response.json())
+      .then((data) => setTechUsers(data.techUsers))
+      .then(() =>
+        setTechUser({
+          full_name: "",
+          expertise: "",
+          location: "",
+          linkedin: "",
+          email: "",
+          offer: "",
+        })
+      );
+  };
 
-const techUserList = techUsers.map(techUser => <li key={techUser._id}>{techUser.full_name}: {techUser.expertise}<button onClick={()=> {
-  handleDelete(techUser)}}>  X</button></li>)
+  //Mapping TechUser Data
+  const techUserList = techUsers.map((techUser) => (
+    <li key={techUser._id}>
+      {techUser.full_name}: {techUser.expertise}
+      <button
+        onClick={() => {
+          handleDelete(techUser);
+        }}
+      >
+        {" "}
+        X
+      </button>
+    </li>
+  ));
 
+  return (
+    <div className="App">
+      <div header className="App-header">
+        <Header />
+        <div>
+          <p>
+            <em>
+              TechBack... <br />
+              "Where Community and Technology Intersect"
+            </em>
+          </p>
+        </div>
+
+        {/* **********
+        APP BODY 
+        ********* */}
+
+        <div>
+          <Routes>
+            <Route path="+" element={<App />} />
+            <Route path="/techusers" element={<TechUsers />} />
+          </Routes>
+        </div>
+
+        <div className="App-body">
+          <p>I'm currently...</p>
+          <div className="button">
+            <div>
+              <Button>In Tech</Button>
+            </div>
+            <div>
+              <Button>In the Community</Button>
+            </div>
+          </div>
+
+          {/* Submit Form */}
 
           <div>
             <form onSubmit={handleSubmit}>
@@ -153,11 +169,10 @@ const techUserList = techUsers.map(techUser => <li key={techUser._id}>{techUser.
           </div>
         </div>
 
-        <TechUsers />
-        <SignIn />
+        {/* <SignIn />
         <TechSignUp />
 
-        <ComUsers />
+        <ComUsers /> */}
       </div>
     </div>
   );

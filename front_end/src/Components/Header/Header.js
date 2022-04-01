@@ -52,7 +52,7 @@ function Header() {
 
       <Navbar bg="light" expand={false}>
         <Container fluid>
-          <Navbar.Brand className="navbar-brand" href="#"><span>Tech</span>Back</Navbar.Brand>
+          <Navbar.Brand className="navbar-brand" href="/"><span>Tech</span>Back</Navbar.Brand>
           <Navbar.Toggle className="navbar-toggler" aria-controls="offcanvasNavbar" />
           <Navbar.Offcanvas
             id="offcanvasNavbar"
@@ -66,9 +66,12 @@ function Header() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Link</Nav.Link>
-                <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/techusers">Meet The Experts</Nav.Link>
+                <Nav.Link href="/comusers">Meet The Community</Nav.Link>
+                <Nav.Link href="/about">Our Mission</Nav.Link>
+
+                {/* <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
                   <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action4">
                     Another action
@@ -77,9 +80,9 @@ function Header() {
                   <NavDropdown.Item href="#action5">
                     Something else here
                   </NavDropdown.Item>
-                </NavDropdown>
+                </NavDropdown> */}
               </Nav>
-              <Form className="d-flex">
+              {/* <Form className="d-flex">
                 <FormControl
                   type="search"
                   placeholder="Search"
@@ -87,7 +90,7 @@ function Header() {
                   aria-label="Search"
                 />
                 <Button variant="outline-success">Search</Button>
-              </Form>
+              </Form> */}
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
