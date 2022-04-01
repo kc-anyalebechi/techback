@@ -5,6 +5,7 @@ import TechUsers from "./Components/TechUsers/TechUser";
 import ComUsers from "./Components/ComUsers/ComUser";
 import Header from "./Components/Header/Header";
 import TechSignUp from "./Components/Authentication/SignUp/TechSignUp";
+import Home from "./Components/Home/Home"; 
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -129,7 +130,7 @@ DELETE HANDLE CLICK
 
         <div>
           <Routes>
-            <Route path="+" element={<App />} />
+            <Route path="+" element={<Home />} />
             <Route path="/techusers" element={<TechUsers />} />
           </Routes>
         </div>

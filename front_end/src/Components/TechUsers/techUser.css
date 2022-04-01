@@ -1,3 +1,11 @@
+.techUser  {
+    padding: 2em;
+}
+
+
 .techUser-body {
-    background-color: red;
+}
+
+.techUser p {
+    text-align: left;
 }

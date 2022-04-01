@@ -1,9 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Breadcrumb, Card, Container, Button } from "react-bootstrap";
+import {Card, Container, Button } from "react-bootstrap";
 import { techSeedData } from "../../SeedData/techSeedData";
 import "./techUser.css";
-import Header from "../Header/Header";
 
 function TechUsers() {
   const showAllTechUsers = Math.floor(Math.random() * techSeedData.length);
@@ -13,6 +12,9 @@ function TechUsers() {
     return (
       <div className="techUser">
         <div header className="techUser-header">
+          <p>
+          Meet the experts in thier feild...
+          </p>
         </div>
 
         <Container>
