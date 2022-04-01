@@ -36,9 +36,7 @@ function App() {
 
         <div className="button">
           <div>
-            <link to="/ComUsers/Conser.js">
               <Button>In Tech</Button>
-            </link>
           </div>
           <div>
             <Button>In the Community</Button>
