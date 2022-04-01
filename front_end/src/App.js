@@ -5,14 +5,14 @@ import TechUsers from "./Components/TechUsers/TechUser";
 import ComUsers from "./Components/ComUsers/ComUser";
 import Header from "./Components/Header/Header";
 import TechSignUp from "./Components/Authentication/SignUp/TechSignUp";
-// import { useState } from "react";
+import { useState } from "react";
 // import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
 
 function App() {
-  // const [techUsers, setTechUsers] = useState([])
-  // const [techUser, setTechUser] = useState({full_name: "", expertise: ""})
+  const [techUsers, setTechUsers] = useState([]);
+  const [techUser, setTechUser] = useState({ full_name: "", expertise: "" });
 
   // const handleClick = () => {
   //   fetch()
@@ -20,10 +20,59 @@ function App() {
   //   .then(data => setTechUsers(data.techUsers))
   // }
 
+  const handleClick = () => {
+    fetch("http://localhost:3000/techusers")
+      .then((res) => res.json())
+      .then((data) => setTechUsers(data.techUsers));
+  };
+
+  // handleChnage
+
+  const handleChange = (event) => {
+    event.persist();
+    setTechUser((prevTechUser) => {
+      const editedTechUser = {
+        ...prevTechUser,
+        [event.target.name]: event.target.value,
+      };
+      return editedTechUser;
+    });
+  };
+
+  // *******************
+  // SUBMIT HANDLE CLICK
+  // ********************
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(techUsers);
+    fetch("http://localhost:3000/techUser", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(techUser),
+    })
+      .then(() => fetch("http://localhost:3000/techUsers"))
+      .then((response) => response.json())
+      .then((data) => setTechUsers(data.techUsers))
+      .then(() =>
+        setTechUser({
+          full_name: "",
+          expertise: "",
+          location: "",
+          linkedin: "",
+          email: "",
+          offer: "",
+        })
+      );
+  };
+
   return (
     <div className="App">
       <Header />
       <div header className="App-header">
+        <div>
         <p>
           <em>
             TechBack... <br />
@@ -36,23 +85,72 @@ function App() {
 
         <div className="button">
           <div>
-              <Button>In Tech</Button>
+            <Button>In Tech</Button>
           </div>
           <div>
             <Button>In the Community</Button>
           </div>
+          </div>
 
           {/* <Routes>
             <Route path="/" element={<ComUsers />} /> */}
-            {/* <Route path="/Main/QuoteOfDay" element={<QuoteOfDay />} />
+          {/* <Route path="/Main/QuoteOfDay" element={<QuoteOfDay />} />
             <Route path="/Main/StayInspired" element={<StayInspired />} />
             <Route path="/Main/NeedHelp" element={<NeedHelp />} />
             <Route path="/Main/ContactUs" element={<ContactUs />} />
             <Route path="/Main/GreenBtn" element={<GreenBtn />} /> */}
-{/* 
+          {/* 
           </Routes> */}
 
+{/* Mapping TechUser Data */}
 
+{/* 
+*******************
+DELETE HANDLE CLICK
+******************** */}
+)
+      const handleDelete = (vinyl) => {
+        // event.preventDefault();
+
+      console.log(vinyl)
+      fetch("http://localhost:3000/vinyls/"+ vinyl._id, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'DELETE',
+        body: JSON.stringify(vinyl)
+      })
+        .then(() => fetch("http://localhost:3000/vinyls/"))
+        .then(response => response.json())
+        .then(data => setVinyls(data.vinyls))
+        .then(() => setVinyl({artist: "", album: ""}))
+      }
+
+
+const techUserList = techUsers.map(techUser => <li key={techUser._id}>{techUser.full_name}: {techUser.expertise}<button onClick={()=> {
+  handleDelete(techUser)}}>  X</button></li>)
+
+
+          <div>
+            <form onSubmit={handleSubmit}>
+              <input
+                onChange={handleChange}
+                value={techUser.full_name}
+                name="full_name"
+                placeholder="Enter Your Full Name"
+              />
+              <input
+                onChange={handleChange}
+                value={techUser.expertise}
+                name="expertise"
+                placeholder="Enter Your Expertise"
+              />
+              <button type="Submit">Submit</button>
+            </form>
+
+            <button onClick={handleClick}>View Tech Professionals</button>
+            <ul>{techUserList}</ul>
+          </div>
         </div>
 
         <TechUsers />
