@@ -12,14 +12,14 @@ function ComUsers() {
     return (
       <div className="comUser">
         <div header className="comUser-header">
-          <Breadcrumb>
+          {/* <Breadcrumb>
             <Breadcrumb.Item>About Us</Breadcrumb.Item>
             <Breadcrumb.Item>Sign Up</Breadcrumb.Item>
             <Breadcrumb.Item>Sign In</Breadcrumb.Item>
             <Breadcrumb.Item>Contact Us</Breadcrumb.Item>
-          </Breadcrumb>
+          </Breadcrumb> */}
         </div>
-        <p>Here is a list of community members looking for you expertise</p>;
+        {/* <p>Here is a list of community members looking for you expertise</p> */}
 
         <Container>
           <div className="comUser-body">

@@ -5,9 +5,10 @@ import TechUsers from "./Components/TechUsers/TechUser";
 import ComUsers from "./Components/ComUsers/ComUser";
 import Header from "./Components/Header/Header";
 import TechSignUp from "./Components/Authentication/SignUp/TechSignUp";
-import Home from "./Components/Home/Home"; 
+import Home from "./Components/Home/Home";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import Footer from "./Components/Home/Footer/Footer.js";
 
 import "./App.css";
 
@@ -111,16 +112,20 @@ DELETE HANDLE CLICK
     </li>
   ));
 
+  // **********
+  // APP HEADER
+  // ***********
+
   return (
     <div className="App">
-      <div header className="App-header">
+      <div className="App-header">
         <Header />
+      </div>
+
+      <div className="App-body">
         <div>
-          <p>
-            <em>
-              TechBack... <br />
-              "Where Community and Technology Intersect"
-            </em>
+          <p className="tagline">
+            <em>"Where Community and Technology Intersect"</em>
           </p>
         </div>
 
@@ -130,25 +135,15 @@ DELETE HANDLE CLICK
 
         <div>
           <Routes>
-            <Route path="+" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/techusers" element={<TechUsers />} />
+            <Route path="/comusers" element={<ComUsers />} />
           </Routes>
         </div>
 
-        <div className="App-body">
-          <p>I'm currently...</p>
-          <div className="button">
-            <div>
-              <Button>In Tech</Button>
-            </div>
-            <div>
-              <Button>In the Community</Button>
-            </div>
-          </div>
+        {/* Submit Form */}
 
-          {/* Submit Form */}
-
-          <div>
+        {/* <div>
             <form onSubmit={handleSubmit}>
               <input
                 onChange={handleChange}
@@ -167,13 +162,15 @@ DELETE HANDLE CLICK
 
             <button onClick={handleClick}>View Tech Professionals</button>
             <ul>{techUserList}</ul>
-          </div>
-        </div>
+          </div> */}
 
         {/* <SignIn />
         <TechSignUp />
 
         <ComUsers /> */}
+      </div>
+      <div className="App-footer">
+        <Footer />
       </div>
     </div>
   );
