@@ -1,7 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Breadcrumb, Card, Container, Button } from "react-bootstrap";
-import { comSeedData } from "../../SeedData/comSeedData";
+import { comSeedData } from "../../../SeedData/comSeedData";
+import "./ComUser.css"
 
 function ComUsers() {
   const showAllComUsers = Math.floor(Math.random() * comSeedData.length);
@@ -12,12 +13,18 @@ function ComUsers() {
     return (
       <div className="comUser">
         <div header className="comUser-header">
+          <div>
+            Sign-in to see more
+          </div>
           {/* <Breadcrumb>
-            <Breadcrumb.Item>About Us</Breadcrumb.Item>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
             <Breadcrumb.Item>Sign Up</Breadcrumb.Item>
             <Breadcrumb.Item>Sign In</Breadcrumb.Item>
             <Breadcrumb.Item>Contact Us</Breadcrumb.Item>
           </Breadcrumb> */}
+          <div>
+          <p>Meet the community...</p>
+        </div>
         </div>
         {/* <p>Here is a list of community members looking for you expertise</p> */}
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Container, Button, Row, Col, Form, FloatingLabel } from "react-bootstrap";
-import { techSeedData } from "../../SeedData/techSeedData";
+import { techSeedData } from "../../../SeedData/techSeedData"
 import "./techUser.css";
 
 function TechUsers() {
@@ -27,17 +27,35 @@ function TechUsers() {
   //   });
   // };
 
-  const showAllTechUsers = Math.floor(Math.random() * techSeedData.length);
-  console.log(showAllTechUsers);
+  // const showAllTechUsers = Math.floor(Math.random() * techSeedData.length);
+  // console.log(showAllTechUsers)
+
+const map = techSeedData.map(x=>x); 
+console.log(map); 
+
+// return (
+//   map.full_name
+// )
+
+// let showAllTechUsers2 = Math.floor(Math.random());
+// console.log(showAllTechUsers2)
+
+
+
+// let showAllTechUsers = [techSeedData]; 
+// console.log(showAllTechUsers)
+
+
+
 
   if (techSeedData) {
     return (
       <div className="techUser">
         <div header className="techUser-header">
-          <p>Meet the experts...</p>
+          <p>Meet the Tech experts...</p>
         </div>
 
-        <Container>
+        {/* <Container>
           <div className="techUser-body">
             <Row>
               <Col>
@@ -80,7 +98,7 @@ Are You From The Community? Sign Up To Get Connected.<hr />
               </Col>
             </Row>
           </div>
-        </Container>
+        </Container> */}
       </div>
     );
   } else {

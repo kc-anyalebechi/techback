@@ -1,14 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button } from "react-bootstrap";
 import SignIn from "./Components/Authentication/SignIn/SignIn.js";
-import TechUsers from "./Components/TechUsers/TechUser";
-import ComUsers from "./Components/ComUsers/ComUser";
+import TechUsers from "./Components/Users/TechUsers/TechUser";
+import ComUsers from "./Components/Users/ComUsers/ComUser";
 import Header from "./Components/Header/Header";
 import TechSignUp from "./Components/Authentication/SignUp/TechSignUp";
 import Home from "./Components/Home/Home";
+import About from "./Components/About/About"
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Footer from "./Components/Home/Footer/Footer.js";
+import Footer from "./Components/Footer/Footer.js";
 
 import "./App.css";
 
@@ -123,11 +124,7 @@ DELETE HANDLE CLICK
       </div>
 
       <div className="App-body">
-        <div>
-          <p className="tagline">
-            <em>"Where Community and Technology Intersect"</em>
-          </p>
-        </div>
+        
 
         {/* **********
         APP BODY 
@@ -138,6 +135,8 @@ DELETE HANDLE CLICK
             <Route path="/" element={<Home />} />
             <Route path="/techusers" element={<TechUsers />} />
             <Route path="/comusers" element={<ComUsers />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/sign-in" element={<SignIn />} />
           </Routes>
         </div>
 
@@ -164,8 +163,8 @@ DELETE HANDLE CLICK
             <ul>{techUserList}</ul>
           </div> */}
 
-        {/* <SignIn />
-        <TechSignUp />
+        <SignIn />
+        {/* <TechSignUp />
 
         <ComUsers /> */}
       </div>

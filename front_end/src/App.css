@@ -21,17 +21,11 @@
   }
 }
 
-.App-header {
- 
-}
 
-.App-body .tagline {
-}
 
 .App-body {
   background-color: #282c34;
   padding-top: 1em;
-  padding-bottom: 5em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,12 +40,7 @@
   text-align: left;
 }
 
-.App-footer {
-  background-color: blue;
-  position: relative;
-  left: 0;
-  bottom: 0;
-}
+
 
 .App-link {
   color: #61dafb;
@@ -73,7 +62,7 @@
   padding-top: 1em;
   margin: 1em;
   font-size: larger;
-  max-height: 4em;
+  /* max-height: 4em; */
   width: 10em;
 }
 
